@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad45e870-2d94-4a1b-9a36-0f7a017f7455" name="Changes" comment="add Product and Validation models with corresponding repositories">
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/service/ProductValidationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/resources/import.sql" afterDir="false" />
+    <list default="true" id="ad45e870-2d94-4a1b-9a36-0f7a017f7455" name="Changes" comment="implement ProductValidationService and update Event history management">
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/enums/EPaymentStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/model/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/repository/PaymentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/claudeCodeEditorTabs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/claudeCodeEditorTabs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/utils/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/utils/JsonUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/utils/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/utils/JsonUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/utils/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/utils/JsonUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/consumer/ProductValidationConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/consumer/ProductValidationConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/dto/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/dto/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/utils/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/utils/JsonUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/consumer/PaymentValidationConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/consumer/PaymentValidationConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/dto/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/dto/Event.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,8 +62,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Record" />
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -93,60 +91,60 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000000057885503" />
-      <entry key="S5" value="1.00075455413729" />
-      <entry key="S10" value="1.0394308851135925" />
-      <entry key="S30" value="1.7564374729934313" />
-      <entry key="S60" value="3.3498339154904597" />
-      <entry key="M2" value="6.9608522399005945" />
-      <entry key="M5" value="15.38377337939662" />
-      <entry key="M10" value="22.601449443093042" />
-      <entry key="M15" value="27.764831871067756" />
-      <entry key="M30" value="48.321362980174726" />
-      <entry key="H1" value="94.09828861890975" />
-      <entry key="H2" value="157.87157443657878" />
-      <entry key="H4" value="254.0055413352614" />
-      <entry key="D1" value="642.2861533535197" />
-      <entry key="W1" value="825.2033006785362" />
+      <entry key="MS500" value="1.0000000000003564" />
+      <entry key="S2" value="1.0007726901522966" />
+      <entry key="S5" value="1.0584625416033604" />
+      <entry key="S10" value="1.2779713423382626" />
+      <entry key="S30" value="1.965031890069349" />
+      <entry key="S60" value="2.487821802928808" />
+      <entry key="M2" value="3.2683445361276933" />
+      <entry key="M5" value="5.041426667174465" />
+      <entry key="M10" value="8.743918914588644" />
+      <entry key="M15" value="14.309855076584599" />
+      <entry key="M30" value="38.6733560723548" />
+      <entry key="H1" value="93.77478418311047" />
+      <entry key="H2" value="182.25747134140084" />
+      <entry key="H4" value="305.78311930393426" />
+      <entry key="D1" value="754.0479132726203" />
+      <entry key="W1" value="969.0552492262548" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="2.495417051334616E-10" />
-      <entry key="MS500" value="0.012006837978810601" />
-      <entry key="S2" value="0.33815164628917793" />
-      <entry key="S5" value="0.8513317096436104" />
-      <entry key="S10" value="1.5340627440307808" />
-      <entry key="S30" value="3.489532503146692" />
-      <entry key="S60" value="6.1186470034157265" />
-      <entry key="M2" value="10.906630694675263" />
-      <entry key="M5" value="19.776617305849125" />
-      <entry key="M10" value="26.420612801188994" />
-      <entry key="M15" value="30.73781319208858" />
-      <entry key="M30" value="46.43244420408546" />
-      <entry key="H1" value="79.40649517412635" />
-      <entry key="H2" value="125.54276177654347" />
-      <entry key="H4" value="196.5686123403541" />
-      <entry key="D1" value="442.55013879169934" />
-      <entry key="W1" value="545.3535247656778" />
+      <entry key="MS100" value="1.1092929973083384E-5" />
+      <entry key="MS500" value="0.1031770806797936" />
+      <entry key="S2" value="0.8450882546084364" />
+      <entry key="S5" value="1.7725024137561147" />
+      <entry key="S10" value="2.753134196470251" />
+      <entry key="S30" value="4.966295156905851" />
+      <entry key="S60" value="6.191093421306641" />
+      <entry key="M2" value="7.029032716807991" />
+      <entry key="M5" value="8.305043771884996" />
+      <entry key="M10" value="11.813304988520464" />
+      <entry key="M15" value="17.453900832133264" />
+      <entry key="M30" value="41.908666369538786" />
+      <entry key="H1" value="92.83052694918484" />
+      <entry key="H2" value="167.5790759564751" />
+      <entry key="H4" value="265.6370870445686" />
+      <entry key="D1" value="565.1392253691954" />
+      <entry key="W1" value="691.4087319607213" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="9.211887834532112E-7" />
-      <entry key="MS500" value="0.06465260044631775" />
-      <entry key="S2" value="0.7299856833975252" />
-      <entry key="S5" value="1.4931283500712929" />
-      <entry key="S10" value="2.3338968171253507" />
-      <entry key="S30" value="5.096983088123151" />
-      <entry key="S60" value="9.335538533253246" />
-      <entry key="M2" value="17.74305749327214" />
-      <entry key="M5" value="35.066963856192494" />
-      <entry key="M10" value="48.95904692728942" />
-      <entry key="M15" value="58.45323681699979" />
-      <entry key="M30" value="94.71489865319917" />
-      <entry key="H1" value="173.47037898114436" />
-      <entry key="H2" value="283.38698909921635" />
-      <entry key="H4" value="450.55298911626755" />
-      <entry key="D1" value="1084.8281108459535" />
-      <entry key="W1" value="1370.5553569558897" />
+      <entry key="MS100" value="0.005448217446685903" />
+      <entry key="MS500" value="0.3543853527356401" />
+      <entry key="S2" value="1.1916434582064466" />
+      <entry key="S5" value="2.357746787109458" />
+      <entry key="S10" value="3.676054395174873" />
+      <entry key="S30" value="6.7231114549257605" />
+      <entry key="S60" value="8.550157278788475" />
+      <entry key="M2" value="10.224342753920714" />
+      <entry key="M5" value="13.312463735378817" />
+      <entry key="M10" value="20.533303899779654" />
+      <entry key="M15" value="31.739296180829573" />
+      <entry key="M30" value="80.54969413834975" />
+      <entry key="H1" value="186.56734398733084" />
+      <entry key="H2" value="349.8013604372529" />
+      <entry key="H4" value="571.3921350121523" />
+      <entry key="D1" value="1319.1768571615487" />
+      <entry key="W1" value="1660.4621511975406" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -174,45 +172,45 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build inventory-service.executor": "Run",
-    "Gradle.Build orchestrator-service.executor": "Run",
-    "Gradle.Build order-service.executor": "Run",
-    "Gradle.Build payment-service.executor": "Run",
-    "Gradle.Build product-validation-service.executor": "Run",
-    "Gradle.inventory-service [build].executor": "Run",
-    "Gradle.orchestrator-service [build].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.InventoryServiceApplication.executor": "Run",
-    "Spring Boot.OrchestratorServiceApplication.executor": "Run",
-    "Spring Boot.OrderServiceApplication.executor": "Run",
-    "Spring Boot.PaymentServiceApplication.executor": "Run",
-    "Spring Boot.ProductValidationServiceApplication.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "copilot.chat.legacySessionMetadata.migrated": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/geraldoluiz/Development/projects/backend/microsservicos-saga-orquestrator/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/config",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.jshint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.jshint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.22412562",
-    "project.structure.side.proportion": "0.0",
-    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build inventory-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build orchestrator-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build order-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build payment-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build product-validation-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.inventory-service [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.orchestrator-service [build].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.InventoryServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.OrchestratorServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.OrderServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PaymentServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ProductValidationServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/geraldoluiz/Development/projects/backend/microsservicos-saga-orquestrator/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/config&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.22412562&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/config" />
@@ -229,7 +227,7 @@
       <recent name="br.com.microservices.orchestrated.orchestratorservice.core.producer" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProductValidationServiceApplication">
+  <component name="RunManager" selected="Spring Boot.PaymentServiceApplication">
     <configuration name="InventoryServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
       <module name="inventory-service.main" />
@@ -302,11 +300,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.PaymentServiceApplication" />
         <item itemvalue="Spring Boot.ProductValidationServiceApplication" />
         <item itemvalue="Spring Boot.OrderServiceApplication" />
         <item itemvalue="Spring Boot.InventoryServiceApplication" />
         <item itemvalue="Spring Boot.OrchestratorServiceApplication" />
-        <item itemvalue="Spring Boot.PaymentServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -334,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791666229870</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="implement ProductValidationService and update Event history management">
+      <option name="closed" value="true" />
+      <created>1791733020208</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1791733020208</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,6 +362,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add Product and Validation models with corresponding repositories" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Product and Validation models with corresponding repositories" />
+    <MESSAGE value="implement ProductValidationService and update Event history management" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement ProductValidationService and update Event history management" />
   </component>
 </project>
